@@ -1,0 +1,353 @@
+Certainly. If you prefer to store the cart data as JSON in a single table, we can simplify the implementation. Here’s how to create a model and respective table to store the cart data, including product details, quantity, and price as JSON.
+
+### Step 1: Create the Cart Model and Migration
+
+First, create the model using the Laravel Artisan command:
+
+```bash
+php artisan make:model Cart -m
+```
+
+### Step 2: Define the Cart Model
+
+Open the `Cart` model file (`app/Models/Cart.php`) and define the model attributes:
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Cart extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'cart_data',
+    ];
+}
+```
+
+### Step 3: Create the Migration for the Carts Table
+
+Open the migration file for the `carts` table created by the `php artisan make:model Cart -m` command. It will be located in the `database/migrations` directory and will have a name like `2024_05_26_000000_create_carts_table.php`.
+
+Modify it to define the schema for the `carts` table:
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCartsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->json('cart_data'); // Store cart data as JSON
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('carts');
+    }
+}
+```
+
+### Step 4: Run the Migrations
+
+Run the migrations to create the `carts` table in your database:
+
+```bash
+php artisan migrate
+```
+
+### Final Code for Cart Class
+
+Here is the final code for the `Cart` class to handle adding, updating, removing products, and saving/loading the cart:
+
+```php
+<?php
+
+namespace App;
+
+use App\Models\Cart as CartModel;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+class Cart
+{
+    public $products = [];
+    public $cartTotalPrice = 0;
+    public $cartTotalQuantity = 0;
+
+    public function __construct($cart = null)
+    {
+        if ($cart) {
+            $this->products = $cart->products;
+            $this->cartTotalPrice = $cart->cartTotalPrice;
+            $this->cartTotalQuantity = $cart->cartTotalQuantity;
+        }
+    }
+
+    public function addProduct($productId, $sizeId, $quantity = 1)
+    {
+        $product = Product::find($productId);
+
+        if (!$product) {
+            return false; // Handle case where product doesn't exist
+        }
+
+        $productIdSizeId = $productId . '_' . $sizeId;
+
+        if (isset($this->products[$productIdSizeId])) {
+            $this->products[$productIdSizeId]['quantity'] += $quantity;
+            $this->products[$productIdSizeId]['totalPrice'] = $this->products[$productIdSizeId]['quantity'] * $product->price;
+        } else {
+            $this->products[$productIdSizeId] = [
+                'product_id' => $productId,
+                'size_id' => $sizeId,
+                'quantity' => $quantity,
+                'price' => $product->price,
+                'totalPrice' => $quantity * $product->price, // Calculate total price for the new product
+                // Add more product details if needed
+            ];
+        }
+
+        $this->updateTotals();
+
+        return true;
+    }
+
+    public function updateQuantity($productId, $sizeId, $quantity)
+    {
+        $productIdSizeId = $productId . '_' . $sizeId;
+
+        if (isset($this->products[$productIdSizeId])) {
+            $this->products[$productIdSizeId]['quantity'] = $quantity;
+            $this->products[$productIdSizeId]['totalPrice'] = $quantity * $this->products[$productIdSizeId]['price'];
+            $this->updateTotals();
+            return true;
+        }
+
+        return false; // Handle case where product not found in cart
+    }
+
+    public function removeProduct($productId, $sizeId)
+    {
+        $productIdSizeId = $productId . '_' . $sizeId;
+
+        if (isset($this->products[$productIdSizeId])) {
+            unset($this->products[$productIdSizeId]);
+            $this->updateTotals();
+            return true;
+        }
+
+        return false; // Handle case where product not found in cart
+    }
+
+    public function clearCart()
+    {
+        $this->products = [];
+        $this->cartTotalPrice = 0;
+        $this->cartTotalQuantity = 0;
+    }
+
+    public function updateTotals()
+    {
+        $this->cartTotalPrice = 0;
+        $this->cartTotalQuantity = 0;
+
+        foreach ($this->products as $item) {
+            $this->cartTotalPrice += $item['totalPrice'];
+            $this->cartTotalQuantity += $item['quantity'];
+        }
+    }
+
+    public function saveToDatabase()
+    {
+        if (!Auth::check()) {
+            return false; // Only save to database if user is authenticated
+        }
+
+        $cartData = [
+            'products' => $this->products,
+            'cartTotalPrice' => $this->cartTotalPrice,
+            'cartTotalQuantity' => $this->cartTotalQuantity,
+        ];
+
+        $cartModel = CartModel::updateOrCreate(
+            ['user_id' => Auth::id()],
+            ['cart_data' => json_encode($cartData)]
+        );
+
+        return true;
+    }
+
+    public static function loadFromDatabase($userId)
+    {
+        $cartModel = CartModel::where('user_id', $userId)->latest()->first();
+
+        if (!$cartModel) {
+            return null; // Handle case where cart for user not found
+        }
+
+        $cartData = json_decode($cartModel->cart_data, true);
+
+        $cart = new Cart();
+        $cart->products = $cartData['products'];
+        $cart->cartTotalPrice = $cartData['cartTotalPrice'];
+        $cart->cartTotalQuantity = $cartData['cartTotalQuantity'];
+
+        return $cart;
+    }
+
+    public static function loadFromSession()
+    {
+        $cartData = Session::get('cart');
+
+        if (!$cartData) {
+            return new Cart(); // Return an empty cart if not found in session
+        }
+
+        $cart = new Cart();
+        $cart->products = $cartData['products'];
+        $cart->cartTotalPrice = $cartData['cartTotalPrice'];
+        $cart->cartTotalQuantity = $cartData['cartTotalQuantity'];
+
+        return $cart;
+    }
+
+    public static function saveToSession($cart)
+    {
+        Session::put('cart', [
+            'products' => $cart->products,
+            'cartTotalPrice' => $cart->cartTotalPrice,
+            'cartTotalQuantity' => $cart->cartTotalQuantity,
+        ]);
+    }
+}
+```
+
+### Final Code for CartController
+
+Here is the final code for `CartController`:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Cart;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class CartController extends Controller
+{
+    public function addToCart(Request $request, $productId, $sizeId)
+    {
+        $quantity = $request->input('quantity', 1);
+        $cart = Cart::loadFromSession();
+
+        if ($cart->addProduct($productId, $sizeId, $quantity)) {
+            Cart::saveToSession($cart);
+
+            if (Auth::check()) {
+                $cart->saveToDatabase();
+            }
+
+            return response()->json(['success' => true, 'message' => 'Product added to cart.']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found.']);
+    }
+
+    public function updateCart(Request $request, $productId, $sizeId)
+    {
+        $quantity = $request->input('quantity');
+        $cart = Cart::loadFromSession();
+
+        if ($cart->updateQuantity($productId, $sizeId, $quantity)) {
+            Cart::saveToSession($cart);
+
+            if (Auth::check()) {
+                $cart->saveToDatabase();
+            }
+
+            return response()->json(['success' => true, 'message' => 'Cart updated.']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found in cart.']);
+    }
+
+    public function removeFromCart($productId, $sizeId)
+    {
+        $cart = Cart::loadFromSession();
+
+        if ($cart->removeProduct($productId, $sizeId)) {
+            Cart::saveToSession($cart);
+
+            if (Auth::check()) {
+                $cart->saveToDatabase();
+            }
+
+            return response()->json(['success' => true, 'message' => 'Product removed from cart.']);
+        }
+
+        return response()->json(['success'
+
+ => false, 'message' => 'Product not found in cart.']);
+    }
+
+    public function clearCart()
+    {
+        $cart = new Cart();
+        Cart::saveToSession($cart);
+
+        if (Auth::check()) {
+            $cart->saveToDatabase();
+        }
+
+        return response()->json(['success' => true, 'message' => 'Cart cleared.']);
+    }
+
+    public function viewCart()
+    {
+        $cart = Cart::loadFromSession();
+        return response()->json(['cart' => $cart]);
+    }
+}
+```
+
+### Note
+
+In this implementation:
+
+- The `Cart` model stores the entire cart data as JSON in the `cart_data` field.
+- The `CartController` interacts with the `Cart` class to handle HTTP requests related to cart operations.
+- The session is used to store the cart for unauthenticated users, while the database is used for authenticated users.
+
+This approach ensures simplicity and efficiency in managing the cart data.

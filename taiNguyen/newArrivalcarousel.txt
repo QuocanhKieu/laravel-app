@@ -1,0 +1,621 @@
+              <div class="new-arrival-box-content pd-featured">
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-chuck-taylor-all-star-future-utility-a05552c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A05552C/A05552C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3669"
+                              alt="Converse Chuck Taylor All Star Future Utility"
+                              title="Converse Chuck Taylor All Star Future Utility" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-chuck-taylor-all-star-future-utility-a05552c.html">Converse Chuck Taylor
+                              All Star Future Utility</a></h4>
+                          <div class="sku"> # A05552C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.317.500 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.550.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> &nbsp; ..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-chuck-taylor-all-star-construct-a05094c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A05094C/A05094C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3670"
+                              alt="Converse Chuck Taylor All Star Construct"
+                              title="Converse Chuck Taylor All Star Construct" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-chuck-taylor-all-star-construct-a05094c.html">Converse Chuck Taylor All
+                              Star Construct</a></h4>
+                          <div class="sku"> # A05094C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">2.125.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.500.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Lấy cảm hứng từ phong cách bóng rổ những năm thập niên 80, Converse Chuck Taylor All
+                              Star Construct gạt bỏ những giới hạn xưa cũ để từng bước hoàn thiện hơn. Khoác lên diện
+                              mạo khác lạ và đầy vẻ t..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-chuck-taylor-all-star-fall-tone-a04548c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A04548C/A04548C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3668"
+                              alt="Converse Chuck Taylor All Star Fall Tone"
+                              title="Converse Chuck Taylor All Star Fall Tone" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-chuck-taylor-all-star-fall-tone-a04548c.html">Converse Chuck Taylor All
+                              Star Fall Tone</a></h4>
+                          <div class="sku"> # A04548C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.232.500 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.450.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Không chỉ là những tone màu basic thường thấy, nhà giày bóng rổ còn mang đến Converse
+                              Chuck Taylor All Star Fall Tone với phối màu cực “dịu”. Converse chưa bao giờ làm con dân
+                              thất vọng với tài lựa ch..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-run-star-legacy-cx-a00868c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A00868C/A00868C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3666" alt="Converse Run Star Legacy CX"
+                              title="Converse Run Star Legacy CX" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-run-star-legacy-cx-a00868c.html">Converse Run Star Legacy CX</a></h4>
+                          <div class="sku"> # A00868C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">2.465.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.900.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Đại diện cho một siêu phẩm hướng đến tương lai với những đổi mới từ công nghệ cho đến
+                              chất liệu, là điều mà Converse Run Star Legacy CX thể hiện đúng như tên gọi. So với diện
+                              mạo hầm hố thì bên tr..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-chuck-taylor-all-star-fall-tone-a04544c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A04544C/A04544C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3667"
+                              alt="Converse Chuck Taylor All Star Fall Tone"
+                              title="Converse Chuck Taylor All Star Fall Tone" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-chuck-taylor-all-star-fall-tone-a04544c.html">Converse Chuck Taylor All
+                              Star Fall Tone</a></h4>
+                          <div class="sku"> # A04544C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.317.500 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.550.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Không chỉ là những tone màu basic thường thấy, nhà giày bóng rổ còn mang đến Converse
+                              Chuck Taylor All Star Fall Tone với phối màu cực “dịu”. Converse chưa bao giờ làm con dân
+                              thất vọng với tài lựa ch..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="converse-run-star-legacy-cx-a00869c.html"> <img
+                              src="image/cache/catalog/Converse/GIA%cc%80Y%202/A00869C/A00869C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3665" alt="Converse Run Star Legacy CX"
+                              title="Converse Run Star Legacy CX" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="converse-run-star-legacy-cx-a00869c.html">Converse Run Star Legacy CX</a></h4>
+                          <div class="sku"> # A00869C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">2.465.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.900.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Đại diện cho một siêu phẩm hướng đến tương lai với những đổi mới từ công nghệ cho đến
+                              chất liệu, là điều mà Converse Run Star Legacy CX thể hiện đúng như tên gọi. So với diện
+                              mạo hầm hố thì bên tr..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-cordura-vn0007ntbz0.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0007NTBZ0/VN0007NTBZ0-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3651" alt="Vans UA Old Skool Cordura"
+                              title="Vans UA Old Skool Cordura" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-cordura-vn0007ntbz0.html">Vans UA Old Skool Cordura</a></h4>
+                          <div class="sku"> # VN0007NTBZ0 </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.785.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.100.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Vans lại tiếp tục chào đón một thành viên mới với diện mạo cùng thiết kế nội thất vô
+                              cùng hiện đại, Vans Old Skool Skool Cordura đem đến cho bạn cái nhìn hoàn mới mẻ. Tích hợp
+                              với công nghệ Cordur..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-pig-suede-vn0005ufahu.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0005UFAHU/VN0005UFAHU-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3650" alt="Vans UA Old Skool Pig Suede"
+                              title="Vans UA Old Skool Pig Suede" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-pig-suede-vn0005ufahu.html">Vans UA Old Skool Pig Suede</a>
+                          </h4>
+                          <div class="sku"> # VN0005UFAHU </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.487.500 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.750.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Không còn mong chờ gì nữa, BST Vans Pig Suede đã chính thức được Vans trình làng với
+                              những chức năng hỗ trợ người dùng hết sức độc đáo, tính năng chống thấm nay đã được Vans
+                              nâng cấp lên một tầm cao m..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-cordura-vn0007ntbxv.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0007NTBXV/VN0007NTBXV-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3652" alt="Vans UA Old Skool Cordura"
+                              title="Vans UA Old Skool Cordura" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-cordura-vn0007ntbxv.html">Vans UA Old Skool Cordura</a></h4>
+                          <div class="sku"> # VN0007NTBXV </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.785.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.100.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Vans lại tiếp tục chào đón một thành viên mới với diện mạo cùng thiết kế nội thất vô
+                              cùng hiện đại, Vans Old Skool Skool Cordura đem đến cho bạn cái nhìn hoàn mới mẻ. Tích hợp
+                              với công nghệ Cordur..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-sk8-low-rearrange-vn000crnba2.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN000CRNBA2/VN000CRNBA2-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3653" alt="Vans UA SK8-Low Rearrange"
+                              title="Vans UA SK8-Low Rearrange" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-sk8-low-rearrange-vn000crnba2.html">Vans UA SK8-Low Rearrange</a></h4>
+                          <div class="sku"> # VN000CRNBA2 </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.785.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.100.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Kiểu dáng SK8-Low cổ điển rất được lòng các tín đồ mê Vans những năm gần đây thì sự xuất
+                              hiện của Vans SK8-Low Rearrange sẽ là bước đột phá mới trong thế giới Sneaker. Phiên bản
+                              tái thiết kế dựa trên ..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-cordura-vn0007ntblk.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0007NTBLK/VN0007NTBLK-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3647" alt="Vans UA Old Skool Cordura"
+                              title="Vans UA Old Skool Cordura" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-cordura-vn0007ntblk.html">Vans UA Old Skool Cordura</a></h4>
+                          <div class="sku"> # VN0007NTBLK </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.785.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.100.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Vans lại tiếp tục chào đón một thành viên mới với diện mạo cùng thiết kế nội thất vô
+                              cùng hiện đại, Vans Old Skool Skool Cordura đem đến cho bạn cái nhìn hoàn mới mẻ. Tích hợp
+                              với công nghệ Cordur..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-knu-skool-vn0009qc6bt.html"> <img
+                              src="image/cache/catalog/Vans/Vans%20Knu%20Skool/VN0009QC6BT/VN0009QC6BT-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3654" alt="Vans UA Knu Skool"
+                              title="Vans UA Knu Skool" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-knu-skool-vn0009qc6bt.html">Vans UA Knu Skool</a></h4>
+                          <div class="sku"> # VN0009QC6BT </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">2.040.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.400.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Khoác lên một diện mạo “múp rụp”, Vans Knu Skool với thiết kế theo kiểu dáng “bánh mì” sẽ
+                              làm bạn thích thú khi diện giày. Các chi tiết của giày được “thổi phồng” theo đúng nghĩa
+                              đen để làm nổi bật hơ..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="chuck-taylor-all-star-1970s-a05584c.html"> <img
+                              src="image/cache/catalog/Converse/A05584C/A05584C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3640"
+                              alt="Converse Chuck Taylor All Star 1970s Origin Story"
+                              title="Converse Chuck Taylor All Star 1970s Origin Story" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="chuck-taylor-all-star-1970s-a05584c.html">Converse Chuck Taylor All Star 1970s
+                              Origin Story</a></h4>
+                          <div class="sku"> # A05584C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.700.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.000.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Nét đẹp trường tồn của Converse Chuck 70s qua từng năm tháng khiến dân tình chao đảo mỗi
+                              khi nhà giày bóng rổ ra mắt “concept” mới. Hầu như chúng ta đều đã quá quen thuộc với
+                              những gam màu basic như t..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="chuck-taylor-all-star-1970s-a05589c.html"> <img
+                              src="image/cache/catalog/Converse/A05589C/A05589C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3642"
+                              alt="Converse Chuck Taylor All Star 1970s Teal Universe"
+                              title="Converse Chuck Taylor All Star 1970s Teal Universe" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="chuck-taylor-all-star-1970s-a05589c.html">Converse Chuck Taylor All Star 1970s
+                              Teal Universe</a></h4>
+                          <div class="sku"> # A05589C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.700.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.000.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Nét đẹp trường tồn của Converse Chuck 70s qua từng năm tháng khiến dân tình chao đảo mỗi
+                              khi nhà giày bóng rổ ra mắt “concept” mới. Hầu như chúng ta đều đã quá quen thuộc với
+                              những gam màu basic như t..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="chuck-taylor-all-star-1970s-a05586c.html"> <img
+                              src="image/cache/catalog/Converse/A05586C/A05586C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3639"
+                              alt="Converse Chuck Taylor All Star 1970s Origin Story"
+                              title="Converse Chuck Taylor All Star 1970s Origin Story" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="chuck-taylor-all-star-1970s-a05586c.html">Converse Chuck Taylor All Star 1970s
+                              Origin Story</a></h4>
+                          <div class="sku"> # A05586C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.615.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.900.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Nét đẹp trường tồn của Converse Chuck 70s qua từng năm tháng khiến dân tình chao đảo mỗi
+                              khi nhà giày bóng rổ ra mắt “concept” mới. Hầu như chúng ta đều đã quá quen thuộc với
+                              những gam màu basic như t..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="chuck-taylor-all-star-1970s-a05585c.html"> <img
+                              src="image/cache/catalog/Converse/A05585C/A05585C-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3641"
+                              alt="Converse Chuck Taylor All Star 1970s Teal Universe"
+                              title="Converse Chuck Taylor All Star 1970s Teal Universe" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="chuck-taylor-all-star-1970s-a05585c.html">Converse Chuck Taylor All Star 1970s
+                              Teal Universe</a></h4>
+                          <div class="sku"> # A05585C </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.615.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">1.900.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Nét đẹp trường tồn của Converse Chuck 70s qua từng năm tháng khiến dân tình chao đảo mỗi
+                              khi nhà giày bóng rổ ra mắt “concept” mới. Hầu như chúng ta đều đã quá quen thuộc với
+                              những gam màu basic như t..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item ">
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-ballistic-mix-vn0007nt9dk.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0007NT9DK/vans-old-skool-ballistic-mix-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3632" alt="Vans UA Old Skool Ballistic Mix"
+                              title="Vans UA Old Skool Ballistic Mix" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-ballistic-mix-vn0007nt9dk.html">Vans UA Old Skool Ballistic
+                              Mix</a></h4>
+                          <div class="sku"> # VN0007NT9DK </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.955.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.300.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p>Nhà Vans mở ra một trang sách khác với những sản phẩm đa dạng và bắt mắt, đặt biệt Vans
+                              Old Skool Ballistic Mix sẽ là item sẽ khiến bạn “xiêu lòng” ngay từ cái nhìn đầu tiên. Hút
+                              mắt với phối màu tươi..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-thumb">
+                    <div class="product-item-content">
+                      <div class="left-block">
+                        <div class="product-image-container second_img so-quickview"> <a
+                            href="vans-ua-old-skool-oversized-laces-vn0007ntyp0.html"> <img
+                              src="image/cache/catalog/Vans/SNEAKERS%202/VN0007NTYP0/vans-old-skool-oversized-laces-250x250.jpg"
+                              data-poip_id="image_ExtensionModuleFeatured_3631" alt="Vans UA Old Skool Oversized Laces"
+                              title="Vans UA Old Skool Oversized Laces" class="img-responsive" /> </a>
+                          <div class="box-label"> <span><img src="image/catalog/icons/ICON%20NEW%20ARRIVAL4aa.png"
+                                alt="" /></span> </div>
+                        </div>
+                      </div>
+                      <div class="right-block">
+                        <div class="caption">
+                          <h4><a href="vans-ua-old-skool-oversized-laces-vn0007ntyp0.html">Vans UA Old Skool Oversized
+                              Laces</a></h4>
+                          <div class="sku"> # VN0007NTYP0 </div>
+                          <div class="price">
+                            <div> <span class="tprice">Sale price: </span> <span class="price-new">1.955.000 đ</span>
+                            </div>
+                            <div> <span class="tprice">Drake Price: </span> <span class="price-old">2.300.000 đ</span>
+                            </div>
+                          </div>
+                          <div class="description  hidden ">
+                            <p> Một lần nữa, nhà giày trượt ván Vans tái xuất với Vans Old Skool Oversized Laces cùng
+                              hàng loạt cải tiến mới. Cực kỳ lạ mắt với lớp lót bên trong giày được tô điểm thêm tone
+                              màu xanh dương cùng vớ..</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript"><!-
+$(function ($) {
+$(".pd-featured").owlCarousel2({
+nav:true,
+dots: false,
+slideBy: 1,
+margin:10,
+items: 3,
+loop: true,
+autoplay:true,
+autoplayTimeout:4500,
+smartSpeed: 550,
+navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+responsive:{
+0:{
+items: 2          },
+600:{
+items: 2          },
+1000:{
+items: 3          }
+}
+});
+});
+
+-></script>

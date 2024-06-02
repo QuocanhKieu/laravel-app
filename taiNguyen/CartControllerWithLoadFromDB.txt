@@ -1,0 +1,94 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Cart;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+class CartController extends Controller
+{
+    public function addToCart(Request $request)
+    {
+        $quantity = $request->input('quantity', 1);
+        $productId = $request->input('productId');
+        $sizeId = $request->input('sizeId');
+
+        $cart = $this->getCart();
+
+        if ($cart->addProduct($productId, $sizeId, $quantity)) {
+            $this->saveCart($cart);
+            return response()->json(['success' => true, 'message' => 'Product added to cart.', 'cartCount' => $cart->cartTotalQuantity]);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found.']);
+    }
+
+    public function updateCart(Request $request)
+    {
+        $quantity = $request->input('quantity');
+        $productId = $request->input('productId');
+        $sizeId = $request->input('sizeId');
+
+        $cart = $this->getCart();
+
+        if ($cart->updateQuantity($productId, $sizeId, $quantity)) {
+            $this->saveCart($cart);
+            return response()->json(['success' => true, 'message' => 'Cart updated.']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found in cart.']);
+    }
+
+    public function removeFromCart(Request $request)
+    {
+        $productId = $request->input('productId');
+        $sizeId = $request->input('sizeId');
+
+        $cart = $this->getCart();
+
+        if ($cart->removeProduct($productId, $sizeId)) {
+            $this->saveCart($cart);
+            return response()->json(['success' => true, 'message' => 'Product removed from cart.']);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Product not found in cart.']);
+    }
+
+    public function clearCart()
+    {
+        $cart = new Cart();
+        $this->saveCart($cart);
+
+        return response()->json(['success' => true, 'message' => 'Cart cleared.']);
+    }
+
+    public function viewCart()
+    {
+        $cart = $this->getCart();
+        return response()->json(['cart' => $cart]);
+    }
+
+    protected function getCart()
+    {
+        if (Auth::check()) {
+            $cart = Cart::loadFromDatabase(Auth::id());
+            if ($cart) {
+                return $cart;
+            }
+        }
+
+        return Cart::loadFromSession();
+    }
+
+    protected function saveCart($cart)
+    {
+        if (Auth::check()) {
+            $cart->saveToDatabase();
+        } else {
+            Cart::saveToSession($cart);
+        }
+    }
+}

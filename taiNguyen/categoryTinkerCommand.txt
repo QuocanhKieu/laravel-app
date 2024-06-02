@@ -1,0 +1,115 @@
+use App\Models\Category;
+
+// Create an array of category data
+$categoriesData = [
+    ['name' => 'Category 1', 'parent_id' => 0, 'slug' => 'category-1'],
+    ['name' => 'Category 2', 'parent_id' => 0, 'slug' => 'category-2'],
+    ['name' => 'Category 3', 'parent_id' => 0, 'slug' => 'category-3'],
+    // Add more category data as needed
+];
+
+// Loop through the array and create category instances
+foreach ($categoriesData as $data) {
+    Category::create($data);
+}
+
+use App\Models\Category;
+$
+
+// Create an array of category data
+$categoriesData = [
+    ['name' => 'Category 1.1', 'parent_id' => 1, 'slug' => 'category-1.1'],
+    ['name' => 'Category 1.2', 'parent_id' => 1, 'slug' => 'category-1.2'],
+    ['name' => 'Category 1.3', 'parent_id' => 1, 'slug' => 'category-1.3'],
+    // Add more category data as needed
+];
+$categoriesData = [
+    ['name' => 'Category 2.1', 'parent_id' => 2, 'slug' => 'category-2.1'],
+    ['name' => 'Category 2.2', 'parent_id' => 2, 'slug' => 'category-2.2'],
+    // Add more category data as needed
+];
+
+// Loop through the array and create category instances
+foreach ($categoriesData as $data) {
+    Category::create($data);
+}
+
+$categoriesWithNullParent = Category::whereNull('parent_id')->get();
+
+
+
+php artisan make:migration add_soft_delete_to_categories_table
+
+
+$categoriesData = [
+    ['name' => 'Category 1.1.1', 'parent_id' => 7, 'slug' => 'category-1.1.1']
+    // Add more category data as needed
+];
+
+// Loop through the array and create category instances
+foreach ($categoriesData as $data) {
+    Category::create($data);
+}
+
+php artisan make:controller MenuController
+
+php artisan make:migration add_deleted_at_to_menus_table --table=menus
+
+$categoriesData = [
+    ['name' => 'Category 1', 'parent_id' => 0, 'slug' => 'category-1'],
+    ['name' => 'Category 2', 'parent_id' => 0, 'slug' => 'category-2'],
+    ['name' => 'Category 3', 'parent_id' => 0, 'slug' => 'category-3'],
+    // Add more category data as needed
+];
+
+// Loop through the array and create category instances
+foreach ($categoriesData as $data) {
+    Category::create($data);
+}
+
+$record = YourModel::find($id);
+$record->delete();
+
+use App\Models\Menu.php
+$records = Menu::withTrashed()->get();// auto restore all
+
+$record->restore();
+
+$user = User::find(1);
+$products = $user->products;
+
+$category = Category::find(1);
+$products = $category->products;
+
+php artisan make:model ProductImage --migration
+ProductImage tên model thì tên table sẽ là product_images
+
+php artisan make:migration create_product_tag_table
+
+class Product extends Model
+{
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'product_tags');
+    }
+}
+
+class Product extends Model
+{
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class); // if table  'product_tag' without 's' be warned !!
+    }
+}
+
+dont need model for product_tag table
+
+// Get existing user and category IDs
+$userIds = User::pluck('id')->toArray();
+$categoryIds = Category::pluck('id')->toArray();
+
+// Create a product using existing user and category IDs
+$product = Product::factory()->create([
+    'user_id' => 1,
+    'category_id' => 1,
+]);

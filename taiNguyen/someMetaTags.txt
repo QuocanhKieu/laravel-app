@@ -1,0 +1,8 @@
+  <title>Bạn Quên Mật khẩu?</title>
+  <meta charset="UTF-8" />
+  <base />
+  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:image" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="alternate" href="forgotten.html" hreflang="vi" />
+  <link href="../image/catalog/icon-1.png" rel="icon" />

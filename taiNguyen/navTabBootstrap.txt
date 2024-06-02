@@ -1,0 +1,33 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#tab-specification" data-toggle="tab">Thông số kỹ thuật</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#tab-description" data-toggle="tab">Mô tả</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#tab-review" data-toggle="tab">Đánh giá</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#tab-tags" data-toggle="tab">Tags</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="tab-specification">
+        <h4>Thông số kỹ thuật</h4>
+        <p>Chi tiết thông số kỹ thuật sẽ được hiển thị ở đây.</p>
+    </div>
+    <div class="tab-pane" id="tab-description">
+        <h4>Mô tả</h4>
+        <p>Chi tiết mô tả sản phẩm sẽ được hiển thị ở đây.</p>
+    </div>
+    <div class="tab-pane" id="tab-review">
+        <h4>Đánh giá</h4>
+        <p>Phần đánh giá sản phẩm sẽ được hiển thị ở đây.</p>
+    </div>
+    <div class="tab-pane" id="tab-tags">
+        <h4>Tags</h4>
+        <p>Các tags liên quan đến sản phẩm sẽ được hiển thị ở đây.</p>
+    </div>
+</div>

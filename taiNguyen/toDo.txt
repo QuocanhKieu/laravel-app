@@ -1,0 +1,3 @@
+1,khi chọn size check số lượng còn lại cho size, product đó và set max cho quantity input
+2,Set vertical scroll bar for small cart
+3,merge yêu thích và giỏ hàng khi đăng nhập thành công
