@@ -97,11 +97,29 @@
         $STATUS_COLORS = App\Constants\OrderConstants::STATUSCOLORS;
     @endphp
         <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         @include('admin.partials.content-header',['name' => '', 'key' => 'Danh Sánh Đơn Hàng','url' => ''])
-{{--            breadCrumb--}}
+            <form class="form-inline ml-3" method="GET" action="{{ route('orders') }}">
+                <input type="hidden" name="sort_by" value="{{ request('sort_by', $sortBy) }}">
+                <input type="hidden" name="sort_direction" value="{{ request('sort_direction', $sortDirection) }}">
+                <input type="hidden" name="show_deleted" value="{{ request('show_deleted', $showDeleted) }}">
+                <input type="hidden" name="order_status" value="{{ request('order_status', $order_status) }}">
+                <input type="hidden" name="payment_status" value="{{ request('payment_status', $payment_status) }}">
+                <input type="hidden" name="page" value="{{ $orders->currentPage() }}">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" value="{{ request('search_term', $searchTerm) }}" name="search_term">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
         <div class="content">
             <form method="GET" action="{{ route('orders') }}" style="padding-left: 13px;">
+                <input type="hidden" name="sort_by" value="{{ request('sort_by', $sortBy) }}">
+                <input type="hidden" name="sort_direction" value="{{ request('sort_direction', $sortDirection) }}">
+                <input type="hidden" name="search_term" value="{{ request('search_term', $searchTerm) }}">
+                <input type="hidden" name="page" value="{{ $orders->currentPage() }}">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="show_deleted" id="show_deleted" value="yes" {{ $showDeleted === 'yes' ? 'checked' : '' }}>
                     <label class="form-check-label" for="show_deleted">
@@ -162,8 +180,10 @@
                                             @if($details['sortable'])
                                                 <a href="{{ route('orders', [
                                                         'sort_by' => $column,
-                                                        'direction' => $sortBy === $column && $sortDirection === 'asc' ? 'desc' : 'asc',
-                                                        'show_deleted' => $showDeleted,
+                                                        'sort_direction' => $sortBy === $column && $sortDirection === 'asc' ? 'desc' : 'asc',
+                                                        'search_term' => request('search_term', $searchTerm),
+                                                        'show_deleted' => request('show_deleted', $showDeleted),
+                                                        'page' => $orders->currentPage(), // Preserve current page
                                                         'order_status' => $order_status,
                                                         'payment_status' => $payment_status
                                                     ]) }}">
@@ -311,11 +331,12 @@
                             </table>
                             <div class="col-md-12">
                                 {{ $orders->appends([
-                                    'sort_by' => $sortBy,
-                                    'direction' => $sortDirection,
-                                    'show_deleted' => $showDeleted,
+                                    'sort_by' =>  request('sort_by', $sortBy),
+                                    'sort_direction' =>  request('sort_direction', $sortDirection),
+                                    'show_deleted' => request('show_deleted', $showDeleted),
+                                    'search_term' => request('search_term', $searchTerm),
                                     'order_status' => $order_status,
-                                    'payment_status' => $payment_status
+                                    'payment_status' => $payment_status,
                                 ])->links('vendor.pagination.bootstrap-4') }}
                             </div>
                         </div>
@@ -697,15 +718,19 @@
         });
 
         $(document).ready(function() {
-            $('.delete-order').click(function(e) {
-                e.preventDefault();
-                var $this = $(this);
-                alertify.confirm('Confirm Message', 'Are you sure you want to delete this order?',
-                    function() {
-                        window.location.href = $this.data('url');
+            $(document).on('click', '.delete-order', function(e) {
+                e.preventDefault(); // Prevent the default action of the link
+
+                var $this = $(this); // Capture the clicked element
+
+                alertify.confirm(
+                    'Confirm Message',
+                    'Are you sure you want to delete this Order?',
+                    function () {
+                        window.location.href = $this.data('url'); // Use the data-url attribute for the redirect
                     },
-                    function() {
-                        alertify.error('Cancel');
+                    function () {
+                        alertify.error('Cancel'); // Handle cancel action
                     }
                 );
             });
@@ -785,10 +810,13 @@
                             success: function (response) {
                                 if (response.success) {
                                     var deleteLink = $('<a>', {
-                                        href: "{{ route('orders.delete', ':order_id') }}".replace(':order_id', order_id),
-                                        class: 'btn btn-danger',
+                                        title: 'Delete',
+                                        href: 'javascript:void(0);',
+                                        class: 'btn btn-danger delete-order',
+                                        'data-url': "{{ route('orders.delete', ':order_id') }}".replace(':order_id', order_id),
                                         html: '<i class="fas fa-trash"></i>'
                                     });
+
                                     $(button).replaceWith(deleteLink);
                                     alertify.success(response.message);
 

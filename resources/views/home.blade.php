@@ -369,6 +369,7 @@
             $(".loader1").fadeOut();
         });
     </script>
+
 @endsection
 
 

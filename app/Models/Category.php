@@ -40,13 +40,18 @@ class Category extends Model
     {
         // Get all child category IDs
         $childCategoryIds = $this->children()->pluck('id');
-        $query = Product::whereIn('category_id', $childCategoryIds)->latest();
+
+        // Start building the query for products
+        $query = Product::whereIn('category_id', $childCategoryIds);
+
+        // Optionally apply a limit if specified
         if ($limit) {
             $query->take($limit);
         }
-        // Fetch all products where childCategory_id is in the list of child category IDs
-        return $query->get();
+
+        return $query;
     }
+
     public function isDescendantOf(self $ancestor): bool
     {
         if ($this->id === $ancestor->id) {

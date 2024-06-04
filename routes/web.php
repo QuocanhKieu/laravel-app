@@ -8,6 +8,7 @@
     use App\Http\Controllers\OrderController;
     use App\Http\Controllers\ProductController;
     use App\Http\Controllers\BrandController;
+    use App\Http\Controllers\ReviewController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\CategoryController;
@@ -157,6 +158,23 @@
             Route::get('/', [OrderController::class, 'index'])
                 ->name('orders');
         });
+
+        Route::prefix('reviews')->group(function () {
+            Route::get('/search', [ReviewController::class, 'search'])
+                ->name('reviews.search');// route name luôn phải ở dạng reviews.abcxyz để search box hướng url về phần trước dầu. tức reviews và chấm thêm search
+            Route::put('/restore', [ReviewController::class, 'restore'])
+                ->name('reviews.restore');
+            Route::get('/delete{id}', [ReviewController::class, 'delete'])
+                ->name('reviews.delete');
+            Route::post('/submitReviewResponse', [ReviewController::class, 'submitReviewResponse'])
+                ->name('reviews.submitReviewResponse');
+            Route::get('/getSubmitReviewResponse', [ReviewController::class, 'getSubmitReviewResponse'])
+                ->name('reviews.getSubmitReviewResponse');
+            Route::put('/updateReviewStatus', [ReviewController::class, 'updateReviewStatus'])
+                ->name('reviews.updateReviewStatus');
+            Route::get('/', [ReviewController::class, 'index'])
+                ->name('reviews');
+        });
     });
 
     Route::get("product/search", [HomeProductController::class, 'search'])
@@ -184,8 +202,10 @@
         ->name('validateCheckoutField');
     Route::post("processCheckout", [HomeProductController::class, 'processCheckout'])
         ->name('processCheckout');
-    Route::get("displayOrderSuccess/{order}", [HomeProductController::class, 'displayOrderSuccess'])
+    Route::get("displayreviewsuccess/{order}", [HomeProductController::class, 'displayOrderSuccess'])
         ->name('displayOrderSuccess');
+    Route::get("reviewsWithPagination", [HomeProductController::class, 'reviewsWithPagination'])
+        ->name('reviewsWithPagination');
 
     Route::get('/{parentCategorySlug}', [HomeProductController::class, 'listByParentCategory'])
         ->name('homeProducts.listByParentCategory')

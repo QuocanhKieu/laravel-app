@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <div class="logo"><a href="https://drake.vn/"><img
+                    <div class="logo"><a href="#"><img
                                 src="{{asset("home/image/catalog/drake_logo.png")}}"
                                 title="Drake Vietnam " alt="Drake Vietnam "/></a>
                     </div>
@@ -241,13 +241,13 @@
                         </div>
                     </div>
                     <div id="search" class="input-group sb-search">
-                        <div class="search-content"><input name="search" class="sb-search-input" placeholder="Tìm kiếm"
-                                                           type="text" value=""/>
-                            <button type="button" class="btn btn-default"><i
+                        <form action="{{ route('search') }}" method="GET" class="search-content">
+                            <input name="search_term" class="sb-search-input" placeholder="Tìm kiếm"
+                                                           type="search" value="{{ request('search_term', $searchTerm??'') }}"/>
+                            <button type="submit" class="btn btn-default"><i
                                     class="fa fa-search"></i></button>
-                        </div>
+                        </form>
                     </div>
-
                 </div>
             </div>
         </div>

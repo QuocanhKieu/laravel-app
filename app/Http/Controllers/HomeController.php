@@ -13,9 +13,9 @@ class HomeController extends Controller
         $parentCategories = ParentCategoriesHelper::returnParentCategories();
         $brands = Brand::all();
         $parentConverseCategory = Category::where('name', 'Converse')->first();
-        $latestConverse = $parentConverseCategory->allProducts(20);
+        $latestConverse = $parentConverseCategory->allProducts(20)->get();
         $parentVansCategory = Category::where('name', 'Vans')->first();
-        $latestVans = $parentVansCategory->allProducts(20);
+        $latestVans = $parentVansCategory->allProducts(20)->get();
 
         return view('home', [
             "brands" => $brands,

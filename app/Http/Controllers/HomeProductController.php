@@ -30,12 +30,59 @@ use function PHPUnit\Framework\throwException;
 
 class HomeProductController extends Controller
 {
-    public function listByParentCategory($parentCategorySlug){
+
+
+
+
+    public function listByParentCategory(Request $request, $parentCategorySlug){
         $parentCategories = ParentCategoriesHelper::returnParentCategories();
         try {
         $thisParentCategory = Category::where('slug', $parentCategorySlug)->firstOrFail();
-        $productsByParentCategory = $thisParentCategory->allProducts();
-        dd($productsByParentCategory->count());
+            $parentCategory = Category::where('slug', $parentCategorySlug)->firstOrFail();
+
+            $breadcrumbs = [
+                ['name' => 'Home', 'url' => route('home')],
+                ['name' => $parentCategory->name, 'url' => ''],
+//                ['name' => $parentCategory->name, 'url' => route('homeProducts.listByParentCategory', $parentCategory->slug)],
+            ];
+
+
+            $sortBy = $request->query('sort_by');
+            $sortDirection = $request->query('sort_direction', 'asc'); // Default to 'asc' if not provided
+
+
+            // Apply sorting based on the query parameters
+        $productsQuery = $thisParentCategory->allProducts();
+
+        // Apply sorting based on the query parameters
+//            dd($sortDirection);
+        if ($sortBy) {
+            if ($sortBy == 'rating') {
+                // Sort by average rating
+                $productsQuery->withCount(['reviews as average_rating' => function ($query) {
+                    $query->select(\DB::raw('coalesce(avg(rating), 0)'));
+                }])
+                    ->orderBy('average_rating', $sortDirection);
+            } else {
+                // Sort by name or price
+                $productsQuery->orderBy($sortBy, $sortDirection);
+            }
+        }
+//            dd($productsQuery->toSql()); // important
+
+        // Paginate the results
+        $perPage = 4; // Adjust the pagination limit as per your requirements
+        $productsByParentCategory = $productsQuery->paginate($perPage);
+            // Pass the parameters to the view
+
+            return view('listProductByCategory', [
+                'parentCategories' => $parentCategories,
+                'breadcrumbs' => $breadcrumbs,
+                'productsByParentCategory' => $productsByParentCategory,
+                'thisParentCategory' => $thisParentCategory,
+                'sortBy'=>$sortBy,
+                'sortDirection'=>$sortDirection
+            ]);
         }catch (ModelNotFoundException $e) {
             // Redirect to a 404 page if any model is not found
             abort(404);
@@ -62,6 +109,16 @@ class HomeProductController extends Controller
             abort(404);
         }
     }
+
+
+
+
+
+
+
+
+
+
     public function displayProductDetail($parentCategorySlug, $childCategorySlug, $productSlug){
         $parentCategories = ParentCategoriesHelper::returnParentCategories();
         try {
@@ -95,14 +152,15 @@ class HomeProductController extends Controller
                 ->where('id', '!=', $product->id)
                 ->take(8) // Limit the number of related products
                 ->get();
-
+            $reviews = $product->reviews->where('status', 'Cho phép' );
 //            dd($relatedProducts);
             return view('productDetail', [
                 'parentCategories' => $parentCategories,
                 'breadcrumbs' => $breadcrumbs,
                 'product' => $product,
                 'watchedProductsExcludeThis' => $watchedProductsExcludeThis,
-                'relatedProducts' => $relatedProducts
+                'relatedProducts' => $relatedProducts,
+                'reviews' => $reviews
             ]);
         }catch (ModelNotFoundException $e) {
             // Redirect to a 404 page if any model is not found
@@ -385,7 +443,7 @@ class HomeProductController extends Controller
             'user_id' => Auth::id(), // Replace with the actual user ID
             'name' => $validatedData->name,
             'product_id' => $validatedData->product_id, // Replace with the actual product ID
-            'review_text' => $validatedData->review_text,
+            'review_text' => $validatedData->review_text??'',
             'rating' => $validatedData->rating,
             'status' => ReviewStatusConstants::REVIEWSTATUSES[1], // Or any default status value you have
         ]);
@@ -396,26 +454,57 @@ class HomeProductController extends Controller
         }
         return response()->json(['success' => false, 'message' => 'Đánh giá thất bại']);
     }
+
+    public function reviewsWithPagination(Request $request)
+    {
+        // Fetch paginated reviews, 5 per page
+        $productId = $request->productId;
+        $product = Product::findOrFail($productId);
+        $reviews = $reviews = $product->reviews()->where('status', 'Cho phép')->paginate(2);
+
+        // Render the partial view with the reviews
+        $html = view('partials.reviews', ['reviews' => $reviews])->render();
+
+        // Return the rendered HTML and pagination data
+        return response()->json([
+            'html' => $html,
+            'current_page' => $reviews->currentPage(),
+            'last_page' => $reviews->lastPage(),
+            'prev_page_url' => $reviews->previousPageUrl(),
+            'next_page_url' => $reviews->nextPageUrl(),
+        ]);
+    }
+
     public function search(Request $request)
     {
+        $parentCategories = ParentCategoriesHelper::returnParentCategories();
+
+        $breadcrumbs = [
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Search', 'url' => ''],
+//                ['name' => $parentCategory->name, 'url' => route('homeProducts.listByParentCategory', $parentCategory->slug)],
+        ];
         $tagName = $request->query('tag');
-        $searchTerm = $request->query('search');
-        $searchKind = $tagName? 'tag':( $searchTerm ? 'search': null);
+        $searchTerm = $request->query("search_term");
+        $sortBy = $request->query('sort_by');
+        $sortDirection = $request->query('sort_direction', 'asc'); // Default to 'asc' if not provided
+
+        $searchKind = $tagName ? 'tag' : ($searchTerm ? 'search' : null);
+
         switch ($searchKind) {
             case 'tag':
-                $products = Product::whereHas('tags', function ($query) use ($tagName) {
-                    $query->where('name', $tagName);
-                })->get();
-                dd($products->count(), $tagName);
-                return view('search', compact('products', 'tagName'));
-            case 'search';
-                $products = Product::where(function ($query) use ($searchTerm) {
+                $productsQuery = Product::whereHas('tags', function ($query) use ($tagName) {
+                    $query->where('name', 'like', "%$tagName%");
+                });
+                break;
+            case 'search':
+                $productsQuery = Product::where(function ($query) use ($searchTerm) {
                     $query->where('id', 'like', "%$searchTerm%")
                         ->orWhere('name', 'like', "%$searchTerm%")
                         ->orWhere('sale_price', 'like', "%$searchTerm%")
+                        ->orWhere('sku', 'like', "%$searchTerm%")
                         ->orWhere('price', 'like', "%$searchTerm%");
                 })
-                    // Use orWhereHas to search in related models
                     ->orWhereHas('category', function ($query) use ($searchTerm) {
                         $query->where('name', 'like', "%$searchTerm%");
                     })
@@ -424,24 +513,41 @@ class HomeProductController extends Controller
                     })
                     ->orWhereHas('tags', function ($query) use ($searchTerm) {
                         $query->where('name', 'like', "%$searchTerm%");
-                    })
-                    ->latest()->paginate(5);;
-                dd($products->count(), $searchTerm);
-                return view('search', compact('products', 'searchTerm'));
+                    });
+                break;
             default:
                 return redirect()->back()->with('error', 'Tag or Search term is required.');
         }
-    }
-    public function sort(Request $request)
-    {
-        $tag = $request->query('tag');
-        if (!$tag) {
-            return redirect()->back()->with('error', 'Tag parameter is not found.');
-        }
-        $products = Product::whereHas('tags', function ($query) use ($tag) {
-            $query->where('name', $tag);
-        })->get();
 
-        return view('search', compact('products', 'tag'));
+        // Apply sorting based on the query parameters
+        if ($sortBy) {
+            if ($sortBy == 'rating') {
+                // Sort by average rating
+                $productsQuery->withCount(['reviews as average_rating' => function ($query) {
+                    $query->select(\DB::raw('coalesce(avg(rating), 0)'));
+                }])->orderBy('average_rating', $sortDirection);
+            } else {
+                // Sort by name or price
+                $productsQuery->orderBy($sortBy, $sortDirection);
+            }
+        }
+
+        // Paginate the results
+        $products = $productsQuery->paginate(5); // Adjust pagination as needed
+
+        return view('productSearch', compact('products', 'tagName', 'searchTerm', 'sortBy', 'sortDirection','breadcrumbs', 'parentCategories'));
     }
+
+//    public function sort(Request $request)
+//    {
+//        $tag = $request->query('tag');
+//        if (!$tag) {
+//            return redirect()->back()->with('error', 'Tag parameter is not found.');
+//        }
+//        $products = Product::whereHas('tags', function ($query) use ($tag) {
+//            $query->where('name', $tag);
+//        })->get();
+//
+//        return view('search', compact('products', 'tag'));
+//    }
 }

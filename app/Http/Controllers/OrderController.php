@@ -12,21 +12,48 @@ class OrderController extends Controller
 {
     public function index(Request $request) {
         $sortBy = $request->get('sort_by', 'created_at'); // Default column to sort by
-        $sortDirection = $request->get('direction', 'desc'); // Default sort direction
+        $sortDirection = $request->get('sort_direction', 'desc'); // Default sort direction
         $showDeleted = $request->get('show_deleted', 'no'); // Default to not showing deleted
+        $searchTerm = $request->get('search_term', '');
+
         $order_status = $request->get('order_status', null);
         $payment_status = $request->get('payment_status', null);
+
 
         // Validate sort direction
         if (!in_array($sortDirection, ['asc', 'desc'])) {
             $sortDirection = 'desc';
         }
-
+        $query = Order::query();
         // Fetch orders with or without trashed ones
-        $query = Order::orderBy($sortBy, $sortDirection);
-
         if ($showDeleted === 'yes') {
             $query = $query->withTrashed();
+        }
+        if ($searchTerm) {
+            $query->where(function ($query) use ($searchTerm) {
+                $query->where('id', 'like', "%$searchTerm%")
+                    ->orWhere('order_code', 'like', "%$searchTerm%")
+                    ->orWhere('payment_method', 'like', "%$searchTerm%")
+                    ->orWhere('user_id', 'like', "%$searchTerm%");
+            })->orWhereHas('orderDetail', function ($query) use ($searchTerm) {
+                $query->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', "%$searchTerm%")
+                        ->orWhere('email', 'like', "%$searchTerm%") // Added column
+                        ->orWhere('phone_number', 'like', "%$searchTerm%"); // Added column
+                });
+            })->orWhereHas('voucher', function ($query) use ($searchTerm) {
+                $query->where(function ($query) use ($searchTerm) {
+                    $query->where('code', 'like', "%$searchTerm%");
+//                        ->orWhere('email', 'like', "%$searchTerm%") // Added column
+//                        ->orWhere('phone_number', 'like', "%$searchTerm%"); // Added column
+                });
+            })->orWhereHas('user', function ($query) use ($searchTerm) {
+                $query->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', "%$searchTerm%");
+//                        ->orWhere('id', 'like', "%$searchTerm%") // Added column
+//                        ->orWhere('phone_number', 'like', "%$searchTerm%"); // Added column
+                });
+            });
         }
 
         if ($order_status !== null) {
@@ -37,9 +64,11 @@ class OrderController extends Controller
             $query = $query->where('payment_status', $payment_status);
         }
 
+        $query->orderBy($sortBy, $sortDirection);
+
         $orders = $query->paginate(5);
 
-        return view('admin.order.index', compact('orders', 'sortBy', 'sortDirection', 'showDeleted', 'order_status', 'payment_status'));
+        return view('admin.order.index', compact('orders', 'sortBy', 'sortDirection', 'showDeleted', 'order_status', 'payment_status','searchTerm'));
     }
 
     public function delete(Request $request, $order_id)
